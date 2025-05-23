@@ -3,8 +3,8 @@
 import type { PayloadAdminBarProps } from '@payloadcms/admin-bar'
 
 import { cn } from '@/utilities/cn'
-import { useSelectedLayoutSegments } from 'next/navigation'
 import { PayloadAdminBar } from '@payloadcms/admin-bar'
+import { useSelectedLayoutSegments } from 'next/navigation'
 import React, { useState } from 'react'
 
 const collectionLabels = {
@@ -53,7 +53,7 @@ export const AdminBar: React.FC<{
             user: 'text-white',
           }}
           cmsURL={process.env.NEXT_PUBLIC_SERVER_URL}
-          collection={collection}
+          // collection={collection}
           collectionLabels={{
             plural: collectionLabels[collection]?.plural || 'Pages',
             singular: collectionLabels[collection]?.singular || 'Page',
