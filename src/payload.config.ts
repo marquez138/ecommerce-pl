@@ -1,14 +1,6 @@
 import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 
-import { Page, Product } from '@/payload-types'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
-import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
-import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
-import { redirectsPlugin } from '@payloadcms/plugin-redirects'
-import { seoPlugin } from '@payloadcms/plugin-seo'
-import { stripePlugin } from '@payloadcms/plugin-stripe'
 import {
   BoldFeature,
   ItalicFeature,
@@ -28,12 +20,10 @@ import { Pages } from '@/collections/Pages'
 import { Products } from '@/collections/Products'
 import { Users } from '@/collections/Users'
 import { createPaymentIntent } from '@/endpoints/create-payment-intent'
-import { customersProxy } from '@/endpoints/customers'
 import { productsProxy } from '@/endpoints/products'
 import { Footer } from '@/globals/Footer'
 import { Header } from '@/globals/Header'
-import { paymentSucceeded } from '@/stripe/webhooks/paymentSucceeded'
-import { productUpdated } from '@/stripe/webhooks/productUpdated'
+// import { productUpdated } from '@/stripe/webhooks/productUpdated'
 import { plugins } from './plugins'
 
 const filename = fileURLToPath(import.meta.url)
