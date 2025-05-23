@@ -17,18 +17,14 @@ export function VariantSelector({ product }: { product: Product }) {
   const variantOptions = product.variantOptions
   const hasVariants = Boolean(product.enableVariants && variants?.length && variantOptions?.length)
 
+ const combinations = useMemo(() => {
+    if (!variantOptions) return []
+    return generateCombinations(variantOptions)
+  }, [variantOptions])
+
   if (!hasVariants) {
     return null
   }
-
-  /**
-   * Flattened array of all possible variant combinations.
-   */
-  const combinations = useMemo(() => {
-    if (!variantOptions) return []
-
-    return generateCombinations(variantOptions)
-  }, [variants])
 
   return variantOptions?.map((key) => {
     const options = key.options

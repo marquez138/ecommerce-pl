@@ -1,17 +1,20 @@
 import type { Product } from '@/payload-types'
 
-import RichText from '@/components/RichText'
 import { AddToCart } from '@/components/Cart/AddToCart'
 import { Price } from '@/components/Price'
-import React, { Suspense } from 'react'
+import RichText from '@/components/RichText'
+import { Suspense } from 'react'
 
 import { VariantSelector } from './VariantSelector'
 
 export function ProductDescription({ product }: { product: Product }) {
   let amount = 0,
     lowestAmount = 0,
-    highestAmount = 0,
-    currency = 'usd'
+    highestAmount = 0
+
+
+    const currency = 'usd'
+    
 
   const hasVariants = product.enableVariants && product.variants?.length
 
