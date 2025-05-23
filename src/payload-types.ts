@@ -261,11 +261,13 @@ export interface Product {
           id?: string | null;
         }[];
         price: number;
+         images?: (string | null) | Media;
         /**
          * Define stock for this variant. A stock of 0 disables checkout for this variant.
          */
         stock: number;
         id?: string | null;
+        
       }[]
     | null;
   /**

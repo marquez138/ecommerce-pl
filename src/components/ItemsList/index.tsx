@@ -1,6 +1,5 @@
 import type { CartItems } from '@/payload-types'
 
-import { Price } from '@/components/Price'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -23,8 +22,8 @@ export const ItemsList: React.FC<Props> = ({ items }) => {
 
         const isVariant = Boolean(item.variant)
         // todo: fix
-        const variant = item.product?.variants?.variants?.length
-          ? item.product.variants.variants.find((v) => v.id === item.variant)
+        const variant = item.product?.variants?.length
+          ? item.product.variants.find((v) => v.id === item.variant)
           : undefined
 
         // todo: fix
@@ -59,7 +58,7 @@ export const ItemsList: React.FC<Props> = ({ items }) => {
 
                 <div className="flex flex-1 flex-col text-base">
                   <span className="leading-tight">{product?.title}</span>
-                  {isVariant && info.options?.length ? (
+                  {/* {isVariant && info.options?.length ? (
                     <p className="text-sm text-neutral-500 dark:text-neutral-400">
                       {info.options
                         ?.map((option) => {
@@ -67,17 +66,17 @@ export const ItemsList: React.FC<Props> = ({ items }) => {
                         })
                         .join(', ')}
                     </p>
-                  ) : null}
+                  ) : null} */}
                 </div>
               </Link>
               <div className="flex h-16 flex-col justify-between">
-                {info?.price && (
+                {/* {info?.price && (
                   <Price
                     amount={info.price?.amount}
                     className="flex justify-end space-y-2 text-right text-sm"
                     currencyCode={info.price?.currency}
                   />
-                )}
+                )} */}
                 <p>{item.quantity}</p>
               </div>
             </div>
